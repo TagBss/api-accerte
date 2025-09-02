@@ -160,19 +160,19 @@ def movimento_bancario():
 
 @app.route('/impostoFaturamento', methods=['GET'])
 def consultar_imposto_faturamento():
-    # Parâmetros da URL
-    data_ini = request.args.get("data_ini")
-    data_fim = request.args.get("data_fim")
+    # # Parâmetros da URL
+    # data_ini = request.args.get("data_ini")
+    # data_fim = request.args.get("data_fim")
 
-    if not data_ini or not data_fim:
-        return jsonify({"erro": "Parâmetros data_ini e data_fim são obrigatórios"}), 400
+    # if not data_ini or not data_fim:
+    #     return jsonify({"erro": "Parâmetros data_ini e data_fim são obrigatórios"}), 400
 
-    # Converte de 'YYYY-MM-DD' para 'DD/MM/YYYY'
-    try:
-        data_ini_fmt = datetime.strptime(data_ini, "%Y-%m-%d").strftime("%d/%m/%Y")
-        data_fim_fmt = datetime.strptime(data_fim, "%Y-%m-%d").strftime("%d/%m/%Y")
-    except ValueError:
-        return jsonify({"erro": "Datas devem estar no formato YYYY-MM-DD"}), 400
+    # # Converte de 'YYYY-MM-DD' para 'DD/MM/YYYY'
+    # try:
+    #     data_ini_fmt = datetime.strptime(data_ini, "%Y-%m-%d").strftime("%d/%m/%Y")
+    #     data_fim_fmt = datetime.strptime(data_fim, "%Y-%m-%d").strftime("%d/%m/%Y")
+    # except ValueError:
+    #     return jsonify({"erro": "Datas devem estar no formato YYYY-MM-DD"}), 400
 
     # Etapa 1: login
     login_url = "https://api.sankhya.com.br/login"
@@ -236,19 +236,19 @@ def consultar_imposto_faturamento():
 
 @app.route('/lucroPresumido', methods=['GET'])
 def lucro_presumido():
-    # Parâmetros da URL
-    data_ini = request.args.get("data_ini")
-    data_fim = request.args.get("data_fim")
+    # # Parâmetros da URL
+    # data_ini = request.args.get("data_ini")
+    # data_fim = request.args.get("data_fim")
 
-    if not data_ini or not data_fim:
-        return jsonify({"erro": "Parâmetros data_ini e data_fim são obrigatórios"}), 400
+    # if not data_ini or not data_fim:
+    #     return jsonify({"erro": "Parâmetros data_ini e data_fim são obrigatórios"}), 400
 
-    # Converte de 'YYYY-MM-DD' para 'DD/MM/YYYY'
-    try:
-        data_ini_fmt = datetime.strptime(data_ini, "%Y-%m-%d").strftime("%d/%m/%Y")
-        data_fim_fmt = datetime.strptime(data_fim, "%Y-%m-%d").strftime("%d/%m/%Y")
-    except ValueError:
-        return jsonify({"erro": "Datas devem estar no formato YYYY-MM-DD"}), 400
+    # # Converte de 'YYYY-MM-DD' para 'DD/MM/YYYY'
+    # try:
+    #     data_ini_fmt = datetime.strptime(data_ini, "%Y-%m-%d").strftime("%d/%m/%Y")
+    #     data_fim_fmt = datetime.strptime(data_fim, "%Y-%m-%d").strftime("%d/%m/%Y")
+    # except ValueError:
+    #     return jsonify({"erro": "Datas devem estar no formato YYYY-MM-DD"}), 400
 
     # Etapa 1: login
     login_url = "https://api.sankhya.com.br/login"
@@ -311,3 +311,4 @@ def lucro_presumido():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
