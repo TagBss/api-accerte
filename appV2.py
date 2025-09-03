@@ -208,8 +208,8 @@ def consultar_imposto_faturamento():
                "fields": {
                    "field": {
                        "$": (
-                           "CODEMP, DTCOMPETENCIA, VLRFATURADO, PIS, COFINS, IRPJ, "
-                           "CSLL "
+                           "CODEMP, DTCOMPETENCIA, VLRFATURADOREC, PIS, COFINS, IRPJ, "
+                           "CSLL, VLRFATURADODESP, DIFFAT, ADDIRPJ"
                        )
                    }
                },
@@ -311,4 +311,5 @@ def lucro_presumido():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
